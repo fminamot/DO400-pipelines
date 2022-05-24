@@ -35,19 +35,19 @@ pipeline {
 story-count-test
 ```
 pipeline {
-  agent any
-	stages {
-		stage('Checkout') {
-    		steps {
-    		    git branch: 'main', url: 'https://github.com/RedHatTraining/DO400-apps'
-    		}
-    		}
-    		stage('Test Word Count') {
-    		steps {
-    		    sh './story-count/test-wc.sh ./story-count/frankenstein.txt 433'
-    		}
-		}
-	}
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/RedHatTraining/DO400-apps'
+            }
+    	}
+        stage('Test Word Count') {
+            steps {
+                sh './story-count/test-wc.sh ./story-count/frankenstein.txt 433'
+            }
+        }
+    }
 }
 ```
 
